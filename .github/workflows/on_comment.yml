@@ -7,7 +7,7 @@ on:
 jobs:
   pr_commented:
     name: PR comment
-    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, 'Run a job') }}
+    if: ${{ github.event.issue.pull_request && startsWith(github.event.comment.body, 'system-test') }}
     runs-on: ubuntu-latest
 
     steps:
